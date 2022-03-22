@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tweet_service_spec</name>
 	<description>Tweet Service for twitter clone application</description>
+	<packaging>jar</packaging>
 	<properties>
 		<java.version>11</java.version>
 
@@ -21,6 +22,7 @@
 		<jackson-version>2.10.2</jackson-version>
 		<datatype-threetenbp-version>2.6.4</datatype-threetenbp-version>
 		<jackson-databind-nullable>0.2.1</jackson-databind-nullable>
+		<maven.test.skip>true</maven.test.skip>
 	</properties>
 	<dependencies>
 
@@ -115,20 +117,18 @@
 						<configuration>
 							<inputSpec>${project.basedir}/src/main/resources/openapi.yml</inputSpec>
 							<generatorName>spring</generatorName>
-							<apiPackage>twitter.clone.tweet_service_api</apiPackage>
-							<modelPackage>twitter.clone.tweet_service_model</modelPackage>
+							<apiPackage>twitter.clone.tweet_service_spec.api</apiPackage>
+							<modelPackage>twitter.clone.tweet_service_spec.model</modelPackage>
 							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
-							<configOptions>
-								<delegatePattern>true</delegatePattern>
-							</configOptions>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
 			</plugin>
 		</plugins>
 	</build>
