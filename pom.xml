@@ -21,13 +21,5 @@
 		<module>tweet_service_app</module>
 		<module>tweet_service_spec</module>
 	</modules>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>
