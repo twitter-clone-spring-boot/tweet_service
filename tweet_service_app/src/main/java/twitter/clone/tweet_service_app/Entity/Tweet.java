@@ -1,5 +1,7 @@
 package twitter.clone.tweet_service_app.Entity;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -8,8 +10,8 @@ import java.util.Date;
 @Entity
 public class Tweet {
 
-    @Id
-    @GeneratedValue(generator = "uuid")
+    @Id @GeneratedValue(generator="system-uuid")
+    @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
     private String content;
     private String user_id;

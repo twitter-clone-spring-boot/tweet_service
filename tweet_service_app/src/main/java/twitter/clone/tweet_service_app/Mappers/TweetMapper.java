@@ -9,4 +9,6 @@ import twitter.clone.tweet_service_spec.model.TweetDTO;
 public interface TweetMapper {
     TweetMapper INSTANCE = Mappers.getMapper( TweetMapper.class );
     TweetDTO toTweetDTO(Tweet tweet);
+
+    Tweet toTweet(TweetDTO tweetDTO);
 }

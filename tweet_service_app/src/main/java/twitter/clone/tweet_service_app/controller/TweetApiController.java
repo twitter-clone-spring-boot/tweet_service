@@ -35,6 +35,13 @@ public class TweetApiController implements TweetApi {
     }
 
     @Override
+    public ResponseEntity<Void> postTweet(TweetDTO body) {
+        Tweet tweet = TweetMapper.INSTANCE.toTweet(body);
+        tweetRepository.save(tweet);
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
+    @Override
     public ResponseEntity tweetTweetIdGet(String tweetId) {
         Optional<Tweet> tweet = tweetRepository.findById(tweetId);
         if(tweet.isPresent()) {
@@ -44,5 +51,6 @@ public class TweetApiController implements TweetApi {
             return new ResponseEntity<TweetDTO>(HttpStatus.OK);
         }
     }
+
 
 }
