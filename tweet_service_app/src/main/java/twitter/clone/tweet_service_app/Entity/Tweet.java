@@ -25,11 +25,11 @@ public class Tweet {
     @UpdateTimestamp
     private Date updated_at;
 
-    @ColumnDefault("0")
-    private Integer total_likes;
+//    @Column(columnDefinition = "int default 0") -> Make this work
+    private Integer total_likes = 0;
 
-    @ColumnDefault("0")
-    private Integer total_comments;
+//    @Column(columnDefinition = "int default 0")
+    private Integer total_comments = 0;
 
     public void setId(String id) {
         this.id = id;

@@ -1,4 +1,4 @@
-FROM mysql:5.7
+FROM mariadb:10.2
 ADD . /docker-entrypoint-initdb.d
 
 # We are adding everything from . to /docker-entryoint-initdb.

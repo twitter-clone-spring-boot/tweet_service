@@ -10,10 +10,12 @@ services:
       - MYSQL_PASSWORD=root
       - MYSQL_DATABASE=tweet
     ports:
-      - "3307:3306"
+      - "3307:3306" #Expose the 3306 port of mysql running inside container to 3307 on localhost
   tweet_service:
     image: tweet_service
-    build: .
+    build:
+      context: ./
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
-    depends_on: ['tweet_db']
+    depends_on: ['tweet_db'] # this make sure that tweet_db runs before tweet_service
