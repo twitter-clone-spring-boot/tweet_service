@@ -27,7 +27,7 @@ paths:
         content:
           '*/*':
             schema:
-              $ref: '#/components/schemas/Tweet'
+              $ref: '#/components/schemas/TweetDTO'
         required: true
       responses:
         default:
@@ -42,27 +42,26 @@ paths:
         - in: path
           name: tweetId
           schema:
-            type: integer
+            type: string
           required: true
-          description: Numeric ID of the tweet to get
+          description: String ID of the tweet to get
       responses:
         '200':
           description: successful operation
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Tweet'
+                $ref: '#/components/schemas/TweetDTO'
         '404':
           description: tweet not found
           content: {}
 components:
   schemas:
-    Tweet:
+    TweetDTO:
       type: object
       properties:
         id:
-          type: integer
-          format: int64
+          type: string
         content:
           type: string
         user_id:
