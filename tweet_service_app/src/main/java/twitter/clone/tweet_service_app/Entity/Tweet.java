@@ -1,6 +1,9 @@
 package twitter.clone.tweet_service_app.Entity;
 
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,9 +18,17 @@ public class Tweet {
     private String id;
     private String content;
     private String user_id;
+
+    @CreationTimestamp
     private Date created_at;
+
+    @UpdateTimestamp
     private Date updated_at;
+
+    @ColumnDefault("0")
     private Integer total_likes;
+
+    @ColumnDefault("0")
     private Integer total_comments;
 
     public void setId(String id) {

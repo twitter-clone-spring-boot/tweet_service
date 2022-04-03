@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS tweet;
+
 CREATE TABLE tweet (
   id VARCHAR(255) NOT NULL,
    content VARCHAR(255) NULL,
