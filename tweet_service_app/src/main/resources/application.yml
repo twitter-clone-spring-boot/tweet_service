@@ -1,5 +1,3 @@
-
-
 spring:
   application.name: "tweet_service_app"
   cloud:
@@ -11,4 +9,7 @@ spring:
         initial-interval: 10000
       discovery:
         enabled: true
-        service-id: configserver
+        service-id: "configserver"
+
+logging:
+  level.root: "DEBUG"
