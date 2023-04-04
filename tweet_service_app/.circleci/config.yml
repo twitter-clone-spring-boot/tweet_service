@@ -1,0 +1,10 @@
+version: '2.1'
+orbs:
+  docker: circleci/docker@2.1.1
+workflows:
+  build-nad-publish-docker-image:
+    jobs:
+      - docker/publish:
+        context: twitter_clone_creds
+        image: sancbansal/twitter_clone
+        tag: eureka_server
