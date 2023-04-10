@@ -5,8 +5,8 @@ workflows:
   build-and-publish-docker-image:
     jobs:
       - docker/publish:
-          path: twitter_service_app
+          path: ./twitter_service_app
           docker-context: twitter_service_app
           context: twitter_clone_creds
           image: sancbansal/twitter_clone
-          tag: eureka_server
+          tag: twitter_service_app
