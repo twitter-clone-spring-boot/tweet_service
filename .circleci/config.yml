@@ -5,7 +5,7 @@ workflows:
   build-and-publish-docker-image:
     jobs:
       - docker/publish:
-        dockerfile: tweet_service_app/Dockerfile
-        context: twitter_clone_creds
-        image: sancbansal/twitter_clone
-        tag: eureka_server
+          dockerfile: tweet_service_app/Dockerfile
+          context: twitter_clone_creds
+          image: sancbansal/twitter_clone
+          tag: eureka_server
