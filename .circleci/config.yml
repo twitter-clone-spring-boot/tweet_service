@@ -4,8 +4,9 @@ orbs:
 workflows:
   build-and-publish-docker-image:
     jobs:
-      - working_directory: tweet_service_app
       - docker/publish:
+          path: twitter_service_app
+          docker-context: twitter_service_app
           context: twitter_clone_creds
           image: sancbansal/twitter_clone
           tag: eureka_server
